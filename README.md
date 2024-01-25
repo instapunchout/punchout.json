@@ -55,9 +55,8 @@ POST https://punchout.cloud/json/xxxxxxx
 
 ```
 {
-    "user_id": "user_id", // can also be email
+    "contact_name": "person placing order name",
     "email": "example@email.com",
-    "buyer_session_id": "buyer_session_id",
     "currency": "USD",
     "items": [
         {
