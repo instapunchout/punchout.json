@@ -50,7 +50,7 @@ POST https://wheretosendcart.com/path (picked from login request cart_url field)
 - After we send cart to the cart_url, what to do to signal to the procurement that sessions is over.
 An option is that you pull your backend for info, but I can also send a message to parent window maybe? that is probably more efficient.
 
-### Order Request
+### Purchase Order Request (sent by procurement on approval)
 
 There is 2 options, either resending all cart data or simply referencing it using punchout_id.
 
