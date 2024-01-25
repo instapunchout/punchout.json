@@ -20,6 +20,7 @@ POST https://wheretosendcart.com/path (picked from login request cart_url field)
 
 ```
 {
+    "punchout_id": "someid_from_instapunchout",
     "user_id": "user_id", // can also be email
     "email": "example@email.com",
     "buyer_session_id": "buyer_session_id",
@@ -51,7 +52,56 @@ An option is that you pull your backend for info, but I can also send a message 
 
 ### Order Request
 
+There is 2 options, either resending all cart data or simply referencing it using punchout_id.
+
 POST https://punchout.cloud/json/xxxxxxx
+
+```
+{
+    "punchout_id": "someid_from_instapunchout", // if this field is present then items,tax,shipping_cost fields will not be necessary & will be ignore
+    "contact_name": "person placing order name",
+    "email": "example@email.com",
+    "billing": {
+      "id": "address_id_in_procurement",
+      "name": "a label of the address",
+      "email": "shippingemail@test.com",
+      "deliver_to": [
+        "usually company name",
+        "or person's name or departement or all"
+      ],
+      "street": [
+        "building, number, street"
+      ],
+      "city": "city",
+      "state": "state", // can be null/undefined // 2/3 letter code if possible
+      "postal_code": "99999",
+      "country": "US", // 2 letter code if possible
+      "phone": "+1 800 5555555",
+      "fullname": null, // can be null/undefined , always a person's name if exists
+      "company": null // can be null/undefined, always a company name if exists
+    },
+    "shipping": {
+      "id": "address_id_in_procurement",
+      "name": "a label of the address",
+      "email": "shippingemail@test.com",
+      "deliver_to": [
+        "usually company name",
+        "or person's name or departement or all"
+      ],
+      "street": [
+        "building, number, street"
+      ],
+      "city": "city",
+      "state": "state", // can be null/undefined // 2/3 letter code if possible
+      "postal_code": "99999",
+      "country": "US", // 2 letter code if possible
+      "phone": "+1 800 5555555",
+      "fullname": null, // can be null/undefined , always a person's name if exists
+      "company": null // can be null/undefined, always a company name if exists
+    }
+}
+```
+
 
 ```
 {
