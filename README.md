@@ -58,7 +58,7 @@ POST https://punchout.cloud/json/xxxxxxx
 
 ```
 {
-    "punchout_id": "someid_from_instapunchout", // if this field is present then items,tax,shipping_cost
+    "punchout_id": "someid_from_instapunchout", // if this field is present then items,tax,shipping_cost,currency
                                                 // fields will not be necessary & will be ignore
     "contact_name": "person placing order name",
     "email": "example@email.com",
